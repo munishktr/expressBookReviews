@@ -70,7 +70,11 @@ public_users.get('/review/:isbn',function (req, res) {
   
     if (book) {
       // 2. If the book exists, send it back
-      return res.status(200).send(JSON.stringify(book["reviews"], null, 4));
+      const response = {
+        message: "Reviews found",
+        data: book["reviews"]
+        };
+      return res.status(200).send(JSON.stringify(response, null, 4));
     } else {
       // 3. If no book matches that ISBN, send a 404 error
       return res.status(404).json({ message: "Book with this ISBN not found" });
