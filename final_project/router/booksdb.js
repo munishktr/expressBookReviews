@@ -12,7 +12,7 @@
 // }
 
 let books = {
-    1: {"author": "Chinua Achebe", "title": "Things Fall Apart", "isbn": "9780385474542", "reviews": {1:"Good book",2:"interesting book"} },
+    1: {"author": "Chinua Achebe", "title": "Things Fall Apart", "isbn": "9780385474542", "reviews": {munish:"Good book",ly:"interesting book"} },
     2: {"author": "Hans Christian Andersen", "title": "Fairy tales", "isbn": "9780140448931", "reviews": {} },
     3: {"author": "Dante Alighieri", "title": "The Divine Comedy", "isbn": "9780142437223", "reviews": {} },
     4: {"author": "Unknown", "title": "The Epic Of Gilgamesh", "isbn": "9780140449198", "reviews": {} },

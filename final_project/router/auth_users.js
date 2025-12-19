@@ -47,7 +47,7 @@ const authenticatedUser = (username, password) => {
 }
 
 // Register a new user
-app.post("/register", (req, res) => {
+regd_users.post("/register", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
@@ -66,8 +66,8 @@ app.post("/register", (req, res) => {
     return res.status(404).json({message: "Unable to register user."});
 });
 
-// Middleware to authenticate requests to "/friends" endpoint
-app.use("/customer/auth/*", function auth(req,res,next){
+// Middleware to authenticate requests to "/regd_users" endpoint
+regd_users.use("/customer/auth/*", function auth(req,res,next){
     // Check if user is logged in and has valid access token
     if (req.session.authorization) {
         let token = req.session.authorization['accessToken'];
@@ -88,7 +88,7 @@ app.use("/customer/auth/*", function auth(req,res,next){
 
 
 // Login endpoint
-app.post("/login", (req, res) => {
+regd_users.post("/login", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
 
@@ -112,13 +112,6 @@ app.post("/login", (req, res) => {
     } else {
         return res.status(208).json({ message: "Invalid Login. Check username and password" });
     }
-});
-
-
-//only registered users can login
-regd_users.post("/login", (req,res) => {
-  //Write your code here
-  return res.status(300).json({message: "Yet to be implemented"});
 });
 
 // Add a book review
